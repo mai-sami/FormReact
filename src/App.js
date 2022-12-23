@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React, { PureComponent } from 'react'
+import Login from './Pages/Login'
+import Register from './Pages/Register'
+import './App.css'
+class App extends PureComponent {
+ state= {
+pathHome:'/'
+ }
+  render() {
+    return (
+      <div className='app'>
+    {window.location.pathname === this.state.pathHome?<Register StateRoute={(e) => this.setState(e)}/>: <Login StateRoutes={(e) => this.setState(e)} />}
+      
+      </div>
+    )
+  }
 }
 
-export default App;
+export default App

@@ -40,7 +40,7 @@ function RightSecation({ StateRoute }) {
                 </div>
                 <div className='divContentForm'>
                     <TextForm  role={true}  title={"Register Individual Account!"} subTitle={"For the purpose of gamers regulation, your details are required."} />
-                    <Form />
+                    <Form Fun={componentDidUpdate}/>
 
                 </div>
             </Continers>

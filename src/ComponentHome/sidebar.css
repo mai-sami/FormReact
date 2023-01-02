@@ -1,0 +1,77 @@
+.homePage {
+    padding: 1rem;
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sidbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100px;
+    align-items: center;
+    position: relative;
+    height: 100vh;
+}
+
+.sidbar hr {
+    position: absolute;
+    min-height: 100vh;
+    right: 0;
+    top: 4rem;
+    width: 0.1px;
+
+    background: #222222;
+    box-shadow: inset 2px 4px 4px rgba(255, 255, 255, 0.57);
+    border-radius: 38px;
+}
+
+.middleside,
+.switch {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidbar .logo {
+    width: 80px;
+      height: 80px;
+}
+
+.middleside {
+    align-items: center;
+}
+
+.middleside img {
+    margin-bottom: 55px;
+}
+
+.middleside img {
+    padding: .3rem;
+}
+
+ 
+
+.last {
+  font-size: 33px;
+  padding: .3rem;
+  margin-bottom: 55px;
+ 
+}
+
+.switch {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 55px;
+    height: 133px;
+    padding: 1rem;
+    background: #515151;
+    border-radius: 60px;
+}
+
+.switch img {
+    width: 32px;
+    height: 32px;
+}

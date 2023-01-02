@@ -4,7 +4,7 @@ import zxcvbn from 'zxcvbn';
 const PasswordStrengthMeter = ({ password }) => {
   const testResult = zxcvbn(password);
   const num = testResult.score * 100 / 4;
-  console.log(testResult.score)
+  console.log(testResult)
   const createPassLabel = () => {
     switch (testResult.score) {
       case (testResult.score>0):

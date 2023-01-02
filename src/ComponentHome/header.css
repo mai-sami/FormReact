@@ -1,0 +1,148 @@
+.all_contentUser {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.details_home {
+    display: flex;
+    flex-direction: column;
+    margin-right: .8rem;
+}
+
+.nameUser,
+.emailUser {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    text-align: right;
+ }
+
+.header_home {
+    width: 100%;
+}
+
+body {
+    overflow-x: hidden;
+ }
+
+.introHome {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    margin: 1.5rem;
+
+}
+
+.introHome h3 {
+    margin-bottom: 3rem;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 30px;
+ 
+}
+
+.allImageGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    overflow: hidden;
+    width: 100%;
+    column-gap: 1rem;
+
+}
+
+.ndseaction {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 5rem;
+    margin: 3rem 1.5rem 1.5rem 1.5rem;
+
+}
+
+.ImageGrid {
+    overflow: hidden;
+    position: relative;
+
+}
+
+.gridItem {
+    border-radius: 32px;
+    width: 100%;
+    height: 250px;
+    display: flex;
+
+}
+
+.textImage {
+    position: absolute;
+     text-align: right;
+    float: right;
+    padding: 1.5rem;
+    justify-content: right;
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    justify-content: end;
+    font-size: 18px;
+    z-index: 999999;
+    top: 66%;
+    right: 0;
+    bottom: 0rem;
+    text-align: right;
+
+}
+
+.Revers {
+    text-align: left !important;
+
+}
+
+.firstText {
+    font-size: 18px;
+    line-height: 1;
+}
+
+.seacnd {
+    font-size: 19px;
+}
+
+h2 {
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 30px;
+ 
+}
+
+.itemOne {
+    width: 378px;
+    height: 60px;
+     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin: 1rem;
+}
+
+.itemOneImg {
+    width: 80x;
+    position: absolute;
+    left: -12px;
+    top: 0px;
+    height: 73px;
+    filter: drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.25));
+}
+.allImageGrid p{
+    color: #D8D8D8;
+}
+.Trext {
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 25px;
+    margin-left: 4rem;
+ }

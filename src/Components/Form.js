@@ -3,34 +3,65 @@ import React, { Component } from 'react'
 import PasswordStrengthMeter from './PasswordPatreen';
 import google from '../assets/flat-color-icons_google.png';
 import { ToastContainer, toast } from 'react-toastify';
-import { useLocation } from 'react-router';
+import * as yup from 'yup';
+import { Link } from 'react-router-dom';
 
 class Form extends Component {
     state = {
         isAgree: false,
         isInformed: false,
         email: "",
+        name: "",
         password: "",
-        restPassword: "",
+        confirmPassword: "",
         massagePasword: false,
         massageEmail: false,
-        massage: false
+        massage: false,
     }
-   
 
+    schema = yup.object().shape({
+        name: yup.string().required().min(6, "name must be more than 5").max(16, "must be less than 16").lowercase("should be lower case"),
+        email: yup.string().email().required(),
+        password: yup
+            .string()
+            .required('Please Enter your password')
+            .matches(
+                "^(?=.*[A-Za-z])(?=.*d)[A-Za-zd]",
+                "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and one special case Character"
+            ),
+        confirmPassword: yup
+            .string()
+            .required()
+            .oneOf([yup.ref("password"), null], "Passwords must match"),
+        isAgree: yup.boolean()
+            .oneOf([true], "You must accept the terms and conditions")
+    });
 
-
-    handleInputChange = e => {
-       
+    handlPaswordChange = e => {
         const target = e.target;
         const value = target.type === 'checkbox' ? target.checked : target.value;
         const name = target.name;
-        if(this.state.massagePasword!="" ){
-            return   this.state.massagePasword=false
+
+        if (this.state.restPassword !== this.state.password) {
+            this.setState((preState) => {
+                return preState.massage = false
+            });
+        }
+        this.setState({
+            [name]: value
+        });
+    }
+
+    handleInputChange = e => {
+        const target = e.target;
+        const value = target.type === 'checkbox' ? target.checked : target.value;
+        const name = target.name;
+        if (this.state.massagePasword != "") {
+            return this.state.massagePasword = false
 
         }
-     else   if(this.state.massagePasword!="" ){
-            return   this.state.massagePasword=false
+        else if (this.state.massagePasword != "") {
+            return this.state.massagePasword = false
 
         }
         this.setState({
@@ -44,45 +75,69 @@ class Form extends Component {
     };
     handleSubmit = () => {
 
-        console.log(this.state.massageEmail)
-        if (this.state.email === '') {
-            this.setState((preState) => {
-                return preState.massageEmail = true
-            });
-        }
-        else if (this.state.password === "") {
-            this.setState((preState) => {
-                return preState.massagePasword = true, preState.massageEmail = false
-            });
-        }
-        else if (this.state.password != this.state.restPassword) {
-            this.setState((preState) => {
-                return preState.massagePasword = false, preState.massage = true
-            });
-        }
-        else if (this.state.isAgree === false) {
-            toast.error('يجب عليك الموافقة على الأحكام والشروط', "", {
-                disableTimeOut: false,
-                titleClass: 'toaster_title',
-                messageClass: 'toaster_messge',
-                timeOut: 5000,
-                closeButton: true
-            })
-        }
-        else {
-            toast.success('تم تسجيل الدخول بنجاح', "", {
-                disableTimeOut: false,
-                titleClass: 'toaster_title',
-                messageClass: 'toaster_messge',
-                timeOut: 5000,
-                closeButton: true
-            })
-        }
+        this.schema.validate(
+            {
+                name: this.state.name,
+                email: this.state.email,
+                password: this.state.password,
+                confirmPassword: this.state.confirmPassword,
+                isAgree: this.state.isAgree
+            }, { abortEarly: false }).catch((e) =>
+                console.error(e.errors)
+            )
+
+
+
+        // if (this.state.email === '') {
+        //     this.setState((preState) => {
+        //         return preState.massageEmail = true
+        //     });
+        // }
+        // else if (this.state.password === "") {
+        //     this.setState((preState) => {
+        //         return preState.massagePasword = true, preState.massageEmail = false
+        //     });
+        // }
+        //  if (this.state.password != this.state.restPassword) {
+        //     this.setState((preState) => {
+        //         return preState.massagePasword = false, preState.massage = true
+        //     });
+        // }
+        // else if (this.state.isAgree === false) {
+        //     toast.error('يجب عليك الموافقة على الأحكام والشروط', "", {
+        //         disableTimeOut: false,
+        //         titleClass: 'toaster_title',
+        //         messageClass: 'toaster_messge',
+        //         timeOut: 5000,
+        //         closeButton: true
+        //     })
+        // }
+        // else {
+        //     toast.success('تم تسجيل الدخول بنجاح', "", {
+        //         disableTimeOut: false,
+        //         titleClass: 'toaster_title',
+        //         messageClass: 'toaster_messge',
+        //         timeOut: 5000,
+        //         closeButton: true
+        //     })
+        // }
 
     };
     render() {
+        const { Fun } = this.props
         return (
             <div className='form' onSubmit={this.handleSubmit}>
+                <label className='formGroup'>
+                    Name*
+                    <input
+                        className='mb'
+                        placeholder='Enter email address'
+                        type="name"
+                        name='name'
+                        value={this.state.name}
+                        onChange={this.handleInputChange} />
+
+                </label>
                 <label className='formGroup'>
                     Email address*
                     <input
@@ -114,8 +169,8 @@ class Form extends Component {
                         placeholder='Repeat password'
                         name='restPassword'
                         type={"password"}
-                        value={this.state.restPassword}
-                        onChange={this.handleInputChange} />
+                        value={this.state.confirmPassword}
+                        onChange={this.handlPaswordChange} />
                     <p className='error'>  {this.state.massage ? " Your Password no matched......!" : ""} </p>
 
                 </label>
@@ -138,8 +193,10 @@ class Form extends Component {
                 </div>
                 <div className=' formGroup--customs BackLogin'>
                     <img src={google} alt="google" className='google' />
-                    <input type="submit" value="login" />
-                    <ToastContainer />
+                    <Link to={'/login'}>
+                    <input type="submit" onClick={Fun} value="login" />
+                    </Link>
+                     <ToastContainer />
                 </div>
 
 

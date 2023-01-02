@@ -1,6 +1,7 @@
 .inputRelative {
-     margin-bottom: 2rem;
+    margin-bottom: 2rem;
 }
+
 .showPass {
     position: relative;
     margin-left: auto;
@@ -28,6 +29,7 @@
 
     color: #696F79;
 }
+
 a {
     color: #1565D8;
     text-decoration: none;
@@ -38,4 +40,5 @@ a {
     line-height: 19px;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }

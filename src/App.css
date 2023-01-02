@@ -1,61 +1,142 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
-    margin: 0 !important;
+  margin: 0 !important;
   padding: 0 !important;
   box-sizing: border-box;
 }
+
+.dark {
+  background-color: red;
+}
+
+.light {
+  background-color: white !important;
+}
+
 @media (max-width:800px) {
-  .contentleftSeaction,.contentleftSeactionLogin,.showPass,.trans{
-      display: none;
-  }
-  .divContentForm,.RightSecation{
-    width: 100%;
-  }
-  .showPass,.trans{
+
+  .contentleftSeaction,
+  .contentleftSeactionLogin,
+  .showPass,
+  .trans {
     display: none;
   }
-  .content{
+
+  .allImageGrid,
+  .ndseaction {
+    grid-template-columns: repeat(1, 1fr);
+
+  }
+
+  .divContentForm,
+  .RightSecation {
+    width: 100%;
+  }
+
+  .showPass,
+  .trans {
+    display: none;
+  }
+
+  .content {
     padding: 0;
     justify-content: center;
     display: flex;
   }
-  .divBack{
+
+  .divBack {
     display: block;
   }
-  .divContentForm{
+
+  .divContentForm {
     margin: 3rem 0 0 0;
     padding: 0;
-    }
-    .content {
-      
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .contentleftSeaction{
-      display: none;
-    }
-}
-@media (min-width:800px) and (max-width:1299px){
-  .all_content{
+  }
+
+  .content {
+
+    display: flex;
     flex-direction: column;
     align-items: center;
   }
-.divContentForm{
-  width: 100%;
+
+  .contentleftSeaction {
+    display: none;
+  }
 }
-.showPass,.trans{
-  display: none;
+
+@media (min-width:800px) and (max-width:1299px) {
+  .all_content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .divContentForm {
+    width: 100%;
+  }
+
+  .showPass,
+  .trans {
+    display: none;
+  }
+
+  .divContentForm {
+    margin: 3rem 0 0 0;
+    padding: 0;
+  }
+
+  .contentleftSeaction {
+    display: none;
+  }
 }
-.divContentForm{
-margin: 3rem 0 0 0;
-padding: 0;
+
+@media (min-width:700px) and (max-width:1200px) {
+
+  .allImageGrid
+  {
+  grid-template-columns: repeat(2, 1fr) !important;
+
 }
-.contentleftSeaction{
-  display: none;
+
+.ImageGrid {
+  margin: .5rem !important;
 }
+}
+
+@media (min-width:1000px) and (max-width:1300px) {
+
+  .ndseaction {
+    grid-template-columns: repeat(2, 1fr) !important;
+
+  }
+
+  .ImageGrid {
+    margin: .5rem !important;
+  }
+}
+
+@media (max-width:699px) {
+
+  .allImageGrid
+   {
+    grid-template-columns: repeat(1, 1fr) !important;
+
+  }
+
+  .ImageGrid {
+    margin: 1rem !important;
+  }
+}
+@media (max-width:1100px) {
+  
+  .ndseaction {
+    grid-template-columns: repeat(1, 1fr) !important;
+
+  }
+
 }

@@ -4,8 +4,8 @@ import TextForm from '../../TextUPForm/TextForm'
 import Tab from './TabComponent/Tab'
 import FormLogin from './FormLogin/FormLogin'
 
-function ReightComponent({StateRoutes}) {
-console.log(StateRoutes,"mai")
+function ReightComponent({StateRoutes,login}) {
+console.log(login,"mai")
     return (
         <>
             <Continers>
@@ -19,7 +19,7 @@ console.log(StateRoutes,"mai")
                         <p>Or</p>
                         <hr />
                     </div>
-                    <FormLogin StateRoutes={StateRoutes}/>
+                    <FormLogin login={login} StateRoutes={StateRoutes}/>
 
                 </div>
             </Continers>

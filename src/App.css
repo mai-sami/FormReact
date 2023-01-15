@@ -17,6 +17,9 @@ body {
 .light {
   background-color: white !important;
 }
+.Content__profile{
+  display: flex;
+  }
 
 @media (max-width:800px) {
 

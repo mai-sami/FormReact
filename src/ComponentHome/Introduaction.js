@@ -3,13 +3,14 @@ import './header.css'
 import first from '../assets/SPIDERMAN.png'
 import secand from '../assets/GOD OF WAR-2.png'
 import last from '../assets/SUPERMAN-2.png'
+import SubHeader from './SubHeader'
 
 class Introduaction extends Component {
 
     render() {
         return (
             <div className='introHome'>
-                <h3 >NEW GAMES </h3>
+                <SubHeader />
                 <div className='allImageGrid'>
                     <div className='ImageGrid'>
                         <img src={secand} alt='first' className='gridItem' />

@@ -37,3 +37,57 @@ hr{
      border: .1px solid #bababaa0;
 
 }
+.Content__profile{
+    display: flex;
+}
+.ContentUser{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 1rem 0 1rem;
+ 
+ }
+.headerItems{
+    justify-content: space-between;
+    display: flex;
+    padding: 0 1rem 0 1rem;
+
+}
+.tables {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin: 2rem auto;
+   }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 1rem;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  .trash{
+color: rgb(216, 56, 56);
+font-size: 22px;
+margin-right: .3rem;
+  }
+  .eye{
+    color: rgb(200, 120, 17);
+    font-size: 22px;
+    margin-left: .8rem;
+  }
+   
+  .snipper{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin-top: 7rem;
+    place-items: center;
+    
+
+  }.td{
+    display: flex;
+  }

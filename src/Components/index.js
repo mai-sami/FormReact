@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
-import Form from './Form'
+import Form from './FormRegister'
 import './style.css'
 import LeftSeactn from './LeftSeaction/LeftSeactn'
 import TextForm from './TextUPForm/TextForm'
 import RightSecation from './LeftSeaction/RightSecation/RightSecation'
 class Index extends Component {
- 
+
     render() {
-        const {StateRoute}=this.props
+        const { StateRoute } = this.props
 
         return (
             <div className='all_content'>
@@ -15,10 +15,10 @@ class Index extends Component {
                     <LeftSeactn />
                 </div>
                 <div className='RightSecation'>
-                <RightSecation StateRoute={StateRoute} />
+                    <RightSecation StateRoute={StateRoute} />
 
                 </div>
-             </div>
+            </div>
         )
     }
 }

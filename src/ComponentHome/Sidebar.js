@@ -6,7 +6,7 @@ import Sun from '../assets/Sun-one (太阳1) (1).png'
 
 class Sidebar extends Component {
     componentDidMount() {
-        this.setDark()
+        this.setLight()
     }
     state = {
         isThem: true

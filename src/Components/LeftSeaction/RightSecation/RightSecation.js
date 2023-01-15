@@ -1,6 +1,6 @@
 import React from 'react'
 import Continers from '../../ContainersComponent/Continers'
-import Form from '../../Form'
+import Form from '../../FormRegister'
 import TextForm from '../../TextUPForm/TextForm'
 import './index.css'
 import arrow from '../../../assets/arrow_back_ios_24px.png'
@@ -39,8 +39,8 @@ function RightSecation({ StateRoute }) {
                     <p className='TextBack' onClick={componentDidUpdate} >Back</p>
                 </div>
                 <div className='divContentForm'>
-                    <TextForm  role={true}  title={"Register Individual Account!"} subTitle={"For the purpose of gamers regulation, your details are required."} />
-                    <Form Fun={componentDidUpdate}/>
+                    <TextForm role={true} title={"Register Individual Account!"} subTitle={"For the purpose of gamers regulation, your details are required."} />
+                    <Form Fun={componentDidUpdate} />
 
                 </div>
             </Continers>

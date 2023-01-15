@@ -1,19 +1,13 @@
 import React, { PureComponent } from 'react'
-import logoUser from '../assets/Rectangle 1.png'
 import EndSecation from './EndSecation'
 import './header.css'
 import Introduaction from './Introduaction'
+import Items from './Items'
 class Header extends PureComponent {
     render() {
         return (
             <header className='header_home'>
-                <div className='all_contentUser'>
-                    <div className='details_home'>
-                        <p className='nameUser'>Name user</p>
-                        <p className='emailUser'>name</p>
-                    </div>
-                    <img src={logoUser} className="logoUser" alt="logoUser" />
-                </div>
+                <Items logout={this.props.logout} />
                 <Introduaction />
                 <EndSecation />
             </header>

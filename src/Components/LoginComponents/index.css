@@ -76,4 +76,11 @@
     flex-direction: column;
    margin-top: 10rem;
 }
-  
+  .logoutHeader:hover{
+    background-color: rgba(0, 0, 0, 0.701);
+    color: white;
+  }
+  .allUsers:hover{
+    background-color: rgba(0, 0, 0, 0.701);
+    color: white;
+  }

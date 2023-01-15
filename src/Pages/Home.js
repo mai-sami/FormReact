@@ -7,7 +7,7 @@ class Home extends PureComponent {
         return (
             <div className='homePage'>
                 <Sidebar />
-                <Header />
+                <Header logout={this.props.logout}/>
                 
             </div>
         )
